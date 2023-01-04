@@ -1,7 +1,7 @@
 import React from "react";
 import PropType from "prop-types";
 import Link from "next/link";
-import { Menu } from "antd";
+import { Menu, Input, Row, Col } from "antd";
 import { TwitterOutlined, UserOutlined, FormOutlined } from "@ant-design/icons";
 
 const AppLayout = ({ children }) => {
@@ -14,11 +14,30 @@ const AppLayout = ({ children }) => {
         <Menu.Item icon={<UserOutlined />}>
           <Link href="/profile">프로필</Link>
         </Menu.Item>
+        <Menu.Item>
+          <Input.Search />
+        </Menu.Item>
         <Menu.Item icon={<FormOutlined />}>
           <Link href="/signup">회원가입</Link>
         </Menu.Item>
       </Menu>
-      {children}
+      <Row gutter={8}>
+        <Col xs={24} md={6}>
+          <div>Hello</div>
+        </Col>
+        <Col xs={24} md={12}>
+          {children}
+        </Col>
+        <Col xs={24} md={6}>
+          <a
+            href="https://github.com/JonginWon"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Made by Jongin
+          </a>
+        </Col>
+      </Row>
     </div>
   );
 };
