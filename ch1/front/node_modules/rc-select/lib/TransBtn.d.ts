@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { RenderNode } from './BaseSelect';
+import { RenderNode } from './interface';
 export interface TransBtnProps {
     className: string;
     customizeIcon: RenderNode;
